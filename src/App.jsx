@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
-import "./App.css"
+import "./App.css";
 import Pokedex from "./components/Pokedex";
-import { getPokemons } from "./api";
+import { getPokemonData, getPokemons } from "./api";
 
 function App() {
 
@@ -13,7 +13,12 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const result = await getPokemons();
+      const data = await getPokemons();
+      const promises = data.results.map(async (pokemon) => {
+        return await getPokemonData(pokemon.url);
+      });
+
+      const result = await Promise.all(promises);
       setPokemons(result);
       setLoading(false);
     } catch (error) {
