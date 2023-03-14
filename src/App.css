@@ -8,6 +8,8 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  background-color: red;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-img {
@@ -19,6 +21,8 @@ nav {
   margin: 0px auto;
   padding: 0 20px;
   align-items: center;
+  text-transform: capitalize;
+  height: 110px;
 }
 
 .searchbar {
@@ -60,6 +64,7 @@ nav {
   display: flex;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
+  background-color: rgb(190, 186, 186);
 }
 
 .pokemon-image {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { searchPokemon } from '../api';
 
+
 const Searchbar = () => {
     const [search, setSearch] = useState("ditto");
     const [pokemon, setPokemon] = useState();
